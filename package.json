@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.4.1",
+    "tailwindcss": "^3.4.3",
+    "tw-elements": "^2.0.0"
+  },
+  "name": "business-lab",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "dev",
+    "start": "./app.js",
+    "build": "npx tailwindcss -i ./public/css/input.css -o ./public/css/styles.css -w",
+    "dev": "nodemon ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrankitjangid/EYE-project.git"
+  },
+  "keywords": [
+    "eye-project",
+    "cybersecurity-startup",
+    "cybersecurity-services"
+  ],
+  "author": "Ankit Jangid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrankitjangid/EYE-project/issues"
+  },
+  "homepage": "https://github.com/mrankitjangid/EYE-project#readme",
+  "description": ""
+}

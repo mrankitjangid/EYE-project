@@ -1,0 +1,24 @@
+<%- include('./partials/carousel') %>
+
+<section id="recent-blog" class="p-8">
+    <!-- Recent Updates Section -->
+    <div class="text-2xl heading">Recent Updates</div>
+    <div class="content-list my-6">
+        <!-- List of latest content -->
+        <ul id="latest-blog-list" class="flex flex-col xl:grid xl:grid-cols-2 gap-4 items-center w-full" onload="getRecentBlogs();">
+
+        </ul>
+
+    </div>
+</section>
+
+<section id="recommend-blog" class="p-8">
+    <div class="text-2xl heading">Popular Blogs</div>
+    <div class="blog-list my-6">
+
+        <!-- list of blog preview -->
+        <ul id="recommend-blog-list" class="flex flex-col xl:grid xl:grid-cols-2 gap-4 items-center w-full" onload="alert('123');getRecommendedBlogs()">
+            
+        </ul>
+    </div>
+</section>

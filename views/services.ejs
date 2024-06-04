@@ -1,0 +1,36 @@
+<% include('./partials/header') %>
+
+<section class="flex justify-center items-center md:min-h-[75vh]" style="background-image: url(/images/services-and-faq-page-background.jpg)">
+    <div class="container grid lg:grid-cols-2 lg:w-3/4 h-full rounded-3xl overflow-hidden shadow-2xl shadow-white">
+        <div class="p-10 flex flex-col justify-center items-center backdrop-blur-md lg:border-r-2 border-black border-b-2 lg:border-b-0">
+            <div class="w-full question-container">
+                <div class="question" onclick="showQuestion(0)">Q1: What types of organizations can request a workshop?</div>
+                <div class="answer hidden">Ans: We cater to a variety of organizations, including colleges, universities, corporate firms, non-profits, and government agencies. Our workshops can be customized to meet the specific needs of different groups.</div>
+            </div>
+            <div class="w-full question-container">
+                <div class="question" onclick="showQuestion(1)">Q2: Are your workshops available online or only in-person?</div>
+                <div class="answer hidden">Ans: We offer both online and in-person workshops. We can tailor the format based on your organization’s needs and the current health guidelines.</div>
+            </div>
+            <div class="w-full question-container">
+                <div class="question" onclick="showQuestion(2)">Q3: What is the typical duration of a workshop?</div>
+                <div class="answer hidden">Ans: The duration of our workshops varies depending on the topic and depth of content. Generally, workshops can range from one to four days. We can adjust the duration based on your specific needs.</div>
+            </div>
+            <div class="w-full question-container">
+                <div class="question" onclick="showQuestion(3)">Q4: What technical requirements are needed for an online workshop?</div>
+                <div class="answer hidden">Ans: For online workshops, participants will need a reliable internet connection, a computer with a webcam and microphone, and any specific software or tools mentioned in the workshop prerequisites.</div>
+            </div>
+        </div>
+        <div class="overflow-hidden box-border flex justify-center items-center backdrop-blur-md">
+            <ul id="services-list" class="flex flex-col gap-1 list-none w-full p-10">
+                <li class=""><a href="/contact/1" class="">Corporate Training</a></li>
+                <li class=""><a href="/contact/2" class="">Commercial One Time Services</a></li>
+                <li class=""><a href="/contact/3" class="">Commercial Long Term Support</a></li>
+                <li class=""><a href="/contact/4" class="">Paid Security Training</a></li>
+                <li class=""><a href="/contact/5" class="">Cyber Hygiene Session</a></li>
+                <li class=""><a href="/contact/6" class="">Got Hacked!!! (Get response asap)</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<% include('./partials/footer') %>

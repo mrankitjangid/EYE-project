@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+    @apply border-b border-b-black rounded-xl w-full text-center h-12 bg-transparent  placeholder:text-black font-semibold
+}
+
+#blog-content p {
+    @apply my-4
+}
+
+#blog-content h2 {
+    @apply text-2xl font-bold
+}
+
+#blog-content li {
+    @apply my-4 ml-6
+}
+
+#blog-content ol, ul {
+    @apply list-disc
+}
+
+.question {
+    @apply bg-slate-700 p-4 my-1 hover:cursor-pointer w-full
+}
+
+.answer {
+    @apply p-4
+}
+
+#services-list li {
+    @apply bg-slate-700 p-4 my-1 hover:cursor-pointer w-full
+}

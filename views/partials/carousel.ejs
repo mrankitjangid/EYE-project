@@ -1,0 +1,40 @@
+<section id="hero" class="">
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="relative" >
+        <!--Carousel indicators-->
+        <div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex justify-center p-0 carousel-indicators">
+            <button type="button" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none carousel-indicator" aria-label="Slide 1" onclick="jumpToSlide(0)"></button>
+            <button type="button" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none carousel-indicator" aria-label="Slide 2" onclick="jumpToSlide(1)"></button>
+            <button type="button" class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none carousel-indicator" aria-label="Slide 3" onclick="jumpToSlide(2)"></button>
+        </div>
+
+        <!--Carousel items-->
+        <div class="relative w-full overflow-hidden carousel-items max-h-[60vw] md:max-h-[40vw] object-cover">
+            <!--First item-->
+            <div class="relative w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none carousel-item">
+                <img src="/images/slider-01.jpg" class="block w-full" alt="Wild Landscape" />
+            </div>
+            <!--Second item-->
+            <div class="relative hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none carousel-item">
+                <img src="/images/slider-02.jpg" class="block w-full" alt="Camera" />
+            </div>
+            <!--Third item-->
+            <div class="relative hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none carousel-item">
+                <img src="/images/slider-03.jpg" class="block w-full" alt="Exotic Fruits" />
+            </div>
+        </div>
+
+        <!--Carousel controls - prev item-->
+        <button class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" onclick="changeSlide(-1)">
+            <span class="inline-block h-8 w-8">
+                <i class="fa-solid fa-chevron-left"></i>
+            </span>
+        </button>
+        <!--Carousel controls - next item-->
+        <button class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" onclick="changeSlide(1)">
+            <span class="inline-block h-8 w-8">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+        </button>
+    </div>
+</section>

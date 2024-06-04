@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= locals.title %></title>
+        <meta name="description" content="<%= locals.description %>">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <script defer src="js/script.js"></script>
+        <script defer src="https://kit.fontawesome.com/b4f027cc41.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="bg-slate-950 text-blue-100 w-full md:w-4/5 m-auto">
+        <%- include('../partials/header') %>
+        <%- body %>
+        <%- include('../partials/footer') %>
+    </body>
+
+</html>
+
