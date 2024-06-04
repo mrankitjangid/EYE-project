@@ -82,7 +82,6 @@ app.get('/overview/:uploadId', async (req, res) => {
 
 app.get('/latest-upload-id', async (req, res) => {
     let dbResponse = await blogModel.find();
-    console.log(dbResponse);
     let response = dbResponse[dbResponse.length - 1]['uploadId'];
     // let response = dbResponse[dbResponse.length - 1]['upload-id'];
     res.send({id: response});

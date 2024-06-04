@@ -1,4 +1,5 @@
-const overviewURL = 'http://localhost/overview/';
+const host = 'https://eye-project.onrender.com/';
+const overviewURL = `${host}overview/`;
 
 
 let currentSlide = 0;
@@ -62,6 +63,13 @@ const fetchData = async (url) => {
 }
 
 
+const showHeader = () => {
+    let menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('show-menu');
+}
+
+
 const latestBlogList = document.getElementById('latest-blog-list');
 const recommendBlogList = document.getElementById('recommend-blog-list');
 
@@ -88,7 +96,7 @@ const insertBlogPreview = async (blogPreviewList, blogId) => {
 }
 
 
-let latestUploadId = fetchData('http://localhost/latest-upload-id');
+let latestUploadId = fetchData(`${host}latest-upload-id`);
 
 
 const getRecentBlogs = async () => {
@@ -104,15 +112,15 @@ const getRecentBlogs = async () => {
 const getRecommendedBlogs = async () => {
     let latestId = await latestUploadId, i = 0;
     latestId = latestId.id;
-    let curr_id = Math.floor(Math.random(latestId - 10001)) + 10001;
-    while ( curr_id > 10000 && i < 6 ) {
+    let curr_id;
+    while ( i < 6 ) {
+        curr_id = Math.floor(Math.random()* (latestId - 10001)) + 10001;
         insertBlogPreview(recommendBlogList, curr_id );
-        curr_id--;
         i++;
     }
 };
 window.onload = function () {
-    if( window.location.href == 'http://localhost/' ) {
+    if( window.location.pathname == '/' ) {
         getRecentBlogs();
         getRecommendedBlogs();
     };

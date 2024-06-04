@@ -33,3 +33,7 @@
 #services-list li {
     @apply bg-slate-700 p-4 my-1 hover:cursor-pointer w-full
 }
+
+.show-menu {
+    @apply absolute top-[5.5rem] left-0 w-full bg-slate-600 z-10
+}

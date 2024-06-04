@@ -6,12 +6,12 @@
                 <a href="/">EYE Project</a>
             </div>
             <!-- navigation bar for mobile screen -->
-            <div class="text-3xl block lg:hidden">
-                <a href=""><i class="fa-solid fa-bars"></i></a>
+            <div class="text-3xl block lg:hidden" onclick="showHeader()">
+                <i class="fa-solid fa-bars"></i>
             </div>
             <!-- navigation menu -->
-            <div class="hidden lg:block">
-                <ul class="flex gap-8 list-none">
+            <div class="hidden lg:block" id="menu">
+                <ul class="flex gap-8 list-none flex-col lg:flex-row p-8 items-center lg:items-start lg:p-0">
                     <li><a href="/">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/workshop">Workshop</a></li>
