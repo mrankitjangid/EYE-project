@@ -14,7 +14,7 @@ let locals = {
 
 dbConnect();
 
-const latestUploadId = 10001;
+const latestUploadId = 10006;
 
 
 const middleware = async (req, res, next) => {
@@ -34,7 +34,23 @@ router.get('/blog', (req, res) => {
 });
 
 router.get('/blog/:blogId', async (req, res) => {
-    let dbResponse = await blogModel.find({
+    let dbResponse = await blogModel.find();
+    let data = [];
+    for ( let i = 0; i < 3; i++ ) {
+        let curr_id = Math.floor(Math.random()* (latestUploadId - 10000));
+        let dataItem = {};
+        if ( dbResponse.length > curr_id ) {
+            try {
+                dataItem.uploadId = dbResponse[curr_id]['uploadId'];
+                dataItem.blogTitle = dbResponse[curr_id]['blogTitle'];
+                dataItem.blogThumbnail = dbResponse[curr_id]['blogThumbnail'];
+                data.push(dataItem);
+            } catch( err ) {
+                console.error('Error while passing data to blog suggestion on sidebar:', err);
+            };
+        }
+    }
+    dbResponse = await blogModel.find({
         'uploadId': req.params.blogId
     });
     if ( dbResponse.length === 0 ) {
@@ -59,7 +75,7 @@ router.get('/blog/:blogId', async (req, res) => {
     }
 
     // res.send(blog);
-    res.render('blog', {blog, locals});
+    res.render('blog', {blog, locals, data});
 });
 
 router.get('/blogdetails', (req, res)=>{
@@ -87,5 +103,9 @@ router.post('/contact/thanks', async (req, res) => {
     }
     res.render('contact', {optionId: 0, locals});
 });
+
+router.get('/about', async (req, res) => {
+    res.render('about', { data });
+})
 
 module.exports = router;

@@ -79,13 +79,13 @@ const insertBlogPreview = async (blogPreviewList, blogId) => {
     const blogPreviewSnippet = `
         <div class="md:flex w-auto">
         <!-- blog list thumbnail -->
-            <div class="blog-thumbnail object-contain aspect-square xl:w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="${data[1]}" alt="blog-thumbnail"></div>
+            <div class="blog-thumbnail object-contain aspect-square xl:w-[40%] xl:max-w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="${data[1]}" alt="blog-thumbnail"></div>
             <!-- blog list title and description -->
             <div class="p-4">
-            <!-- blog title -->
-            <div class="blog-title text-md font-semibold"><a href="/blog/${blogId}" class=" text-xl">${data[2]}</a></div>
-            <!-- blog description (almost 20 words) -->
-            <div class="blog-description mt-1">${data[3]}</div>
+                <!-- blog title -->
+                <div class="blog-title text-md font-semibold"><a href="/blog/${blogId}" class=" text-xl">${data[2]}</a></div>
+                <!-- blog description (almost 20 words) -->
+                <div class="blog-description mt-1">${data[3]}</div>
             </div>
             </div>
             `;
@@ -120,7 +120,7 @@ const getRecommendedBlogs = async () => {
     }
 };
 window.onload = function () {
-    if( window.location.pathname == '/' ) {
+    if( window.location.pathname == '/' || window.location.pathname == '' ) {
         getRecentBlogs();
         getRecommendedBlogs();
     };
