@@ -683,8 +683,8 @@ video {
   margin-top: 2rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
+.mt-0 {
+  margin-top: 0px;
 }
 
 .box-border {
@@ -739,12 +739,28 @@ video {
   height: 100vh;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .max-h-\[60vw\] {
   max-height: 60vw;
 }
 
 .min-h-52 {
   min-height: 13rem;
+}
+
+.min-h-80 {
+  min-height: 20rem;
+}
+
+.min-h-60 {
+  min-height: 15rem;
+}
+
+.min-h-40 {
+  min-height: 10rem;
 }
 
 .w-40 {
@@ -765,10 +781,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .min-w-20 {
@@ -977,10 +989,6 @@ video {
   padding: 2rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .px-20 {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -989,6 +997,11 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .pb-1 {
@@ -1013,6 +1026,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .text-2xl {
@@ -1299,10 +1316,6 @@ video {
     margin: 4rem;
   }
 
-  .md\:flex {
-    display: flex;
-  }
-
   .md\:grid {
     display: grid;
   }
@@ -1319,10 +1332,6 @@ video {
     min-height: 75vh;
   }
 
-  .md\:min-h-48 {
-    min-height: 12rem;
-  }
-
   .md\:w-2\/3 {
     width: 66.666667%;
   }
@@ -1333,10 +1342,6 @@ video {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:min-w-48 {
-    min-width: 12rem;
   }
 
   .md\:grid-cols-2 {
@@ -1363,6 +1368,10 @@ video {
     padding: 2rem;
   }
 
+  .md\:p-12 {
+    padding: 3rem;
+  }
+
   .md\:align-middle {
     vertical-align: middle;
   }
@@ -1375,6 +1384,10 @@ video {
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:grid {
+    display: grid;
   }
 
   .lg\:hidden {
@@ -1424,6 +1437,15 @@ video {
   .lg\:p-8 {
     padding: 2rem;
   }
+
+  .lg\:p-16 {
+    padding: 4rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -1443,16 +1465,8 @@ video {
     width: 40%;
   }
 
-  .xl\:w-\[40\%\] {
-    width: 40%;
-  }
-
   .xl\:max-w-none {
     max-width: none;
-  }
-
-  .xl\:max-w-\[40\%\] {
-    max-width: 40%;
   }
 
   .xl\:grid-cols-2 {

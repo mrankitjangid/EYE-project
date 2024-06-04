@@ -77,9 +77,9 @@ const recommendBlogList = document.getElementById('recommend-blog-list');
 const insertBlogPreview = async (blogPreviewList, blogId) => {
     const data = await fetchData(overviewURL + blogId);
     const blogPreviewSnippet = `
-        <div class="md:flex w-auto">
+        <div class="md:flex w-auto xl:max-h-60">
         <!-- blog list thumbnail -->
-            <div class="blog-thumbnail object-contain aspect-square xl:w-[40%] xl:max-w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="${data[1]}" alt="blog-thumbnail"></div>
+            <div class="blog-thumbnail object-contain aspect-square xl:max-w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="${data[1]}" alt="blog-thumbnail"></div>
             <!-- blog list title and description -->
             <div class="p-4">
                 <!-- blog title -->

@@ -18,7 +18,7 @@ app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
 
 
-const PORT = 80 || process.env.PORT;
+const PORT = process.env.PORT || 4444;
 
 
 const dbConnect = require('./server/config/db');
