@@ -23,11 +23,11 @@
 }
 
 .question {
-    @apply bg-slate-700 p-4 my-1 hover:cursor-pointer w-full
+    @apply bg-slate-700 p-4 hover:cursor-pointer w-full
 }
 
 .answer {
-    @apply p-4
+    @apply p-4 bg-slate-400 text-black
 }
 
 #services-list li {

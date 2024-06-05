@@ -7,7 +7,11 @@
     <!-- show blog content -->
     <div class="md:grid md:grid-cols-3 xl:grid-cols-8 lg:gap-8 lg:p-8">
         <div class="blog-content md:col-span-2 xl:col-span-5">
+<<<<<<< HEAD
             <img loading="lazy" src="<%- blog.blogImg %>" alt="Blog Image" class="w-full">
+=======
+            <img src="<%- blog.blogImg %>" alt="Blog Image" class="w-full" width="100%" height="100%">
+>>>>>>> f9028cf (bug fixes with enhanced features)
             <%- blog.textContent %>
         </div>
         <div class="sidebar md:col-span-1 xl:col-span-3">
@@ -23,7 +27,7 @@
                     <% for( let i = 0; i < data.length; i++ ) { %>
                         <li class="md:w-full">
                             <div class="flex min-w-20 max-w-60 xl:max-w-none flex-col md:align-middle xl:flex-row my-4">
-                                <img class="w-full xl:w-2/5 aspect-square object-cover" src="<%= data[i].blogThumbnail %>" alt="thumbnail"> 
+                                <img class="w-full xl:w-2/5 aspect-square object-cover" src="<%= data[i].blogThumbnail %>" alt="thumbnail" width="100%" height="100%"> 
                                 <a href="/blog/<%= data[i].uploadId %>" class="underline p-2"><%= data[i].blogTitle %></a>
                             </div>
                         </li>

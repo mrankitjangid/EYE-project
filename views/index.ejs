@@ -5,8 +5,22 @@
     <div class="text-2xl heading">Recent Updates</div>
     <div class="content-list my-6">
         <!-- List of latest content -->
-        <ul id="latest-blog-list" class="flex flex-col xl:grid xl:grid-cols-2 gap-4 items-center w-full" onload="getRecentBlogs();">
-
+        <ul id="latest-blog-list" class="flex flex-col xl:grid xl:grid-cols-2 gap-4 items-center w-full">
+            <% for( let i = 0; i < recentBlogs.length; i++ ) { %>
+                <li class="bg-slate-900 max-w-sm md:max-w-7xl rounded-3xl overflow-hidden shadow-slate-500 shadow-sm">
+                    <div class="md:flex w-auto xl:max-h-60">
+                        <!-- blog list thumbnail -->
+                        <div class="blog-thumbnail object-contain aspect-square xl:max-w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="<%- recentBlogs[i].blogImg %>" alt="blog-thumbnail" width="100%" height="100%"></div>
+                        <!-- blog list title and description -->
+                        <div class="p-4">
+                            <!-- blog title -->
+                            <div class="blog-title text-md font-semibold"><a href="/blog/<%- recentBlogs[i].uploadId %>" class=" text-xl"><%- recentBlogs[i].blogTitle %></a></div>
+                            <!-- blog description (almost 20 words) -->
+                            <div class="blog-description mt-1"><%- recentBlogs[i].description %></div>
+                        </div>
+                    </div>
+                </li>
+            <% } %>
         </ul>
 
     </div>
@@ -17,8 +31,24 @@
     <div class="blog-list my-6">
 
         <!-- list of blog preview -->
-        <ul id="recommend-blog-list" class="flex flex-col xl:grid xl:grid-cols-2 gap-4 items-center w-full" onload="alert('123');getRecommendedBlogs()">
-            
+        <ul id="recommend-blog-list" class="flex flex-col xl:grid xl:grid-cols-2 gap-4 items-center w-full">
+
+            <% for( let i = 0; i < recommendedBlogs.length; i++ ) { %>
+                <li class="bg-slate-900 max-w-sm md:max-w-7xl rounded-3xl overflow-hidden shadow-slate-500 shadow-sm">
+                    <div class="md:flex w-auto xl:max-h-60">
+                        <!-- blog list thumbnail -->
+                        <div class="blog-thumbnail object-contain aspect-square xl:max-w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="<%- recommendedBlogs[i].blogImg %>" alt="blog-thumbnail" width="100%" height="100%"></div>
+                        <!-- blog list title and description -->
+                        <div class="p-4">
+                            <!-- blog title -->
+                            <div class="blog-title text-md font-semibold"><a href="/blog/<%- recommendedBlogs[i].uploadId %>" class=" text-xl"><%- recommendedBlogs[i].blogTitle %></a></div>
+                            <!-- blog description (almost 20 words) -->
+                            <div class="blog-description mt-1"><%- recommendedBlogs[i].description %></div>
+                        </div>
+                    </div>
+                </li>
+            <% } %>
+
         </ul>
     </div>
 </section>

@@ -68,7 +68,7 @@ app.get('/overview/:uploadId', async (req, res) => {
     let blog = [];
     blog.push(req.params.uploadId);
     try {
-        blog.push(dbResponse["blogThumbnail"]);
+        blog.push(dbResponse["blogImg"]);
         blog.push(dbResponse["blogTitle"]);
         blog.push(dbResponse['description']);
         blog.push(dbResponse['tags']);
