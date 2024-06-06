@@ -118,7 +118,7 @@ router.get('/contact', (req, res) => {
     locals.title = "Secure Your Business | Contact Our Cybersecurity Experts";
     locals.description = "Need rock-solid cybersecurity solutions?  Connect with our expert team at [Your Company Name] today. Discuss your needs and get a free quote. We're here to safeguard your business.";
     res.render('contact', {optionId: 0, locals});
-})
+});
 
 router.get('/contact/:optionId?', (req, res) => {
     locals.title = "Secure Your Business | Contact Our Cybersecurity Experts";
@@ -147,6 +147,10 @@ router.get('/about', async (req, res) => {
     locals.title = "Protecting Your Data: About EYE Project";
     locals.description = "Learn about EYE Project, a leading cybersecurity startup dedicated to safeguarding businesses and individuals in Jaipur and across India. We offer innovative solutions to combat today's cyber threats."
     res.render('about', {locals});
-})
+});
+
+router.all('*', (req, res) => {
+    res.render('page404');
+});
 
 module.exports = router;

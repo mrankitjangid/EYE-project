@@ -87,6 +87,10 @@ app.get('/latest-upload-id', async (req, res) => {
     res.send({id: response});
 })
 
+app.get('/sitemap.xml', (req, res) => {
+    res.header('Content-Type', 'application/xml');
+    res.sendFile(__dirname + '/views/sitemap.xml');
+});
 
 
 app.listen(PORT, () => {
