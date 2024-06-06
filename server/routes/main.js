@@ -149,8 +149,4 @@ router.get('/about', async (req, res) => {
     res.render('about', {locals});
 });
 
-router.all('*', (req, res) => {
-    res.render('page404');
-});
-
 module.exports = router;

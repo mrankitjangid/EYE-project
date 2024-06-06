@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const blogModel = require('./server/models/blogModel');
 const dotenv = require('dotenv');
+const fs = require('fs');
 dotenv.config({});
 
 const app = express();
@@ -90,6 +91,10 @@ app.get('/latest-upload-id', async (req, res) => {
 app.get('/sitemap.xml', (req, res) => {
     res.header('Content-Type', 'application/xml');
     res.sendFile(__dirname + '/views/sitemap.xml');
+});
+
+app.all('*', (req, res) => {
+    res.render('page404');
 });
 
 
