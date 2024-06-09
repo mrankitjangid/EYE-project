@@ -14,8 +14,6 @@ let locals = {
 
 dbConnect();
 
-const latestUploadId = 10006;
-
 
 const middleware = async (req, res, next) => {
     // blog = await dbConnect();
@@ -30,14 +28,15 @@ router.get('/', async (req, res) => {
     locals.description = "Protect your business from cyberattacks. EYE Project offers industry-leading cybersecurity solutions to safeguard your data and ensure business continuity. Learn more!";
     let dbResponse = await blogModel.find();
     let recentBlogs = [];
+    let posts = dbResponse.length;
     for( let i = 0; i < 6; i++ ) {
         try {
             let blog = {};
-            blog.uploadId = dbResponse[i]["uploadId"];
-            blog.blogImg = dbResponse[i]["blogImg"];
-            blog.blogTitle = dbResponse[i]["blogTitle"];
-            blog.description = dbResponse[i]['description'];
-            blog.tags = dbResponse[i]['tags'];
+            blog.uploadId = dbResponse[posts - 1 - i]["uploadId"];
+            blog.blogImg = dbResponse[posts - 1 - i]["blogImg"];
+            blog.blogTitle = dbResponse[posts - 1 - i]["blogTitle"];
+            blog.description = dbResponse[posts - 1 - i]['description'];
+            blog.tags = dbResponse[posts - 1 - i]['tags'];
             recentBlogs.push(blog);
         } catch ( err ) {
             console.error('Error while getting recent blog from Database = ', err );
@@ -45,7 +44,7 @@ router.get('/', async (req, res) => {
     }
     let recommendedBlogs = [];
     for( let i = 0; i < 6; i++ ) {
-        let curr_id = Math.floor(Math.random() * dbResponse.length);
+        let curr_id = Math.floor(Math.random() * posts);
         try {
             let blog = {};
             blog.uploadId = dbResponse[curr_id]["uploadId"];
@@ -69,13 +68,13 @@ router.get('/blog/:blogId', async (req, res) => {
     let dbResponse = await blogModel.find();
     let data = [];
     for ( let i = 0; i < 3; i++ ) {
-        let curr_id = Math.floor(Math.random()* (latestUploadId - 10000));
+        let curr_id = Math.floor(Math.random()* dbResponse.length);
         let dataItem = {};
         if ( dbResponse.length > curr_id ) {
             try {
                 dataItem.uploadId = dbResponse[curr_id]['uploadId'];
                 dataItem.blogTitle = dbResponse[curr_id]['blogTitle'];
-                dataItem.blogThumbnail = dbResponse[curr_id]['blogThumbnail'];
+                dataItem.blogImg = dbResponse[curr_id]['blogImg'];
                 data.push(dataItem);
             } catch( err ) {
                 console.error('Error while passing data to blog suggestion on sidebar:', err);
@@ -86,9 +85,7 @@ router.get('/blog/:blogId', async (req, res) => {
         'uploadId': req.params.blogId
     });
     if ( dbResponse.length === 0 ) {
-        dbResponse = await blogModel.find({
-            'uploadId': 10001
-        });
+        res.render('page404');
     }
     dbResponse = dbResponse[0];
     let blog = {};

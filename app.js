@@ -25,8 +25,6 @@ const PORT = process.env.PORT || 4444;
 const dbConnect = require('./server/config/db');
 dbConnect();
 
-const latestUploadId = 10001;
-
 
 const middleware = async (req, res, next) => {
     next();

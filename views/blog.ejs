@@ -23,7 +23,7 @@
                     <% for( let i = 0; i < data.length; i++ ) { %>
                         <li class="md:w-full">
                             <div class="flex min-w-20 max-w-60 xl:max-w-none flex-col md:align-middle xl:flex-row my-4">
-                                <img class="w-full xl:w-2/5 aspect-square object-cover" src="<%= data[i].blogThumbnail %>" alt="thumbnail" width="100%" height="100%"> 
+                                <img class="w-full xl:w-2/5 aspect-square object-cover" src="<%= data[i].blogImg %>" alt="thumbnail" width="100%" height="100%"> 
                                 <a href="/blog/<%= data[i].uploadId %>" class="underline p-2"><%= data[i].blogTitle %></a>
                             </div>
                         </li>
