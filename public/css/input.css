@@ -6,19 +6,19 @@
     @apply border-b border-b-black rounded-xl w-full text-center h-12 bg-transparent  placeholder:text-black font-semibold
 }
 
-#blog-content p {
+#blog-content p, #privacy-policy p {
     @apply my-4
 }
 
-#blog-content h2 {
+#blog-content h2, #privacy-policy h2 {
     @apply text-2xl font-bold
 }
 
-#blog-content li {
+#blog-content li, #privacy-policy li {
     @apply my-4 ml-6
 }
 
-#blog-content ol, ul {
+#blog-content ol, #privacy-policy ol, ul {
     @apply list-disc
 }
 

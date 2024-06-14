@@ -719,6 +719,10 @@ video {
   display: grid;
 }
 
+.contents {
+  display: contents;
+}
+
 .hidden {
   display: none;
 }
@@ -1187,24 +1191,24 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-#blog-content p {
+#blog-content p, #privacy-policy p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-#blog-content h2 {
+#blog-content h2, #privacy-policy h2 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
 }
 
-#blog-content li {
+#blog-content li, #privacy-policy li {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 1.5rem;
 }
 
-#blog-content ol, ul {
+#blog-content ol, #privacy-policy ol, ul {
   list-style-type: disc;
 }
 

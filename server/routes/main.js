@@ -146,4 +146,24 @@ router.get('/about', async (req, res) => {
     res.render('about', {locals});
 });
 
+router.get('/privacy-policy', async (req, res) => {
+    let dbResponse = await blogModel.find();
+    let data = [];
+    for ( let i = 0; i < 3; i++ ) {
+        let curr_id = Math.floor(Math.random()* dbResponse.length);
+        let dataItem = {};
+        if ( dbResponse.length > curr_id ) {
+            try {
+                dataItem.uploadId = dbResponse[curr_id]['uploadId'];
+                dataItem.blogTitle = dbResponse[curr_id]['blogTitle'];
+                dataItem.blogImg = dbResponse[curr_id]['blogImg'];
+                data.push(dataItem);
+            } catch( err ) {
+                console.error('Error while passing data to blog suggestion on sidebar:', err);
+            };
+        }
+    }
+    res.render('privacy-policy', {locals, data});
+})
+
 module.exports = router;
