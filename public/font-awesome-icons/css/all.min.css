@@ -63,6 +63,22 @@
     content: "\f3c5"
 }
 
+.fa-magnifying-glass:before {
+    content: "\f002"
+}
+
+.fa-xmark:before {
+    content: "\f00d"
+}
+
+.fa-angles-right:before {
+    content: "\f101"
+}
+
+.fa-angles-left:before {
+    content: "\f100"
+}
+
 @font-face {
     font-family: "Font Awesome 6 Free";
     font-style: normal;

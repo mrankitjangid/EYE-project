@@ -26,12 +26,6 @@ const dbConnect = require('./server/config/db');
 dbConnect();
 
 
-const middleware = async (req, res, next) => {
-    next();
-}
-
-
-app.use(middleware);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -51,33 +45,6 @@ app.use(express.json());
 
 
 app.use('/', require('./server/routes/main'));
-
-
-app.get('/overview/:uploadId', async (req, res) => {
-    // getting data from database
-    let dbResponse = await blogModel.find({
-        "uploadId": req.params.uploadId
-    });
-    if ( dbResponse.length === 0 ) {
-        dbResponse = await blogModel.find({
-            "uploadId": 10001
-        });
-    }
-    dbResponse = dbResponse[0];
-    let blog = [];
-    blog.push(req.params.uploadId);
-    try {
-        blog.push(dbResponse["blogImg"]);
-        blog.push(dbResponse["blogTitle"]);
-        blog.push(dbResponse['description']);
-        blog.push(dbResponse['tags']);
-    } catch ( err ) {
-        console.error('Error while getting overview from Database = ', err );
-    }
-    res.send(blog);
-    // sendResponse(res, JSON.stringify(blog));
-});
-
 
 app.get('/latest-upload-id', async (req, res) => {
     let dbResponse = await blogModel.find();
