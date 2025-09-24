@@ -1,4 +1,4 @@
-const host = 'https://eye-project.onrender.com/';
+const host = process.env.HOST;
 const overviewURL = `${host}overview/`;
 
 
@@ -56,47 +56,10 @@ const showQuestion = (n) => {
     }
 }
 
-
-// fuction to fetch data
-const fetchData = async (url) => {
-    let response = await fetch(url)
-    .then(
-        resp => resp.json()
-    );
-    return response;
-}
-
-
 const showHeader = () => {
     let menu = document.getElementById('menu');
     menu.classList.toggle('hidden');
     menu.classList.toggle('show-menu');
-}
-
-
-const latestBlogList = document.getElementById('latest-blog-list');
-const recommendBlogList = document.getElementById('recommend-blog-list');
-
-
-const insertBlogPreview = async (blogPreviewList, blogId) => {
-    const data = await fetchData(overviewURL + blogId);
-    const blogPreviewSnippet = `
-    <div class="md:flex w-auto xl:max-h-60">
-    <!-- blog list thumbnail -->
-    <div class="blog-thumbnail object-contain aspect-square xl:max-w-[40%]"><img class="w-full md:min-h-48 md:min-w-48 object-cover aspect-square" src="${data[1]}" alt="blog-thumbnail" width="100%" height="100%"></div>
-    <!-- blog list title and description -->
-    <div class="p-4">
-    <!-- blog title -->
-    <div class="blog-title text-md font-semibold"><a href="/blog/${blogId}" class=" text-xl">${data[2]}</a></div>
-    <!-- blog description (almost 20 words) -->
-    <div class="blog-description mt-1">${data[3]}</div>
-    </div>
-    </div>
-    `;
-    let newListItem = document.createElement('li');
-    newListItem.classList.add(...'bg-slate-900 max-w-sm md:max-w-7xl rounded-3xl overflow-hidden shadow-slate-500 shadow-sm'.split(' '));
-    newListItem.innerHTML = blogPreviewSnippet;
-    blogPreviewList.appendChild(newListItem);
 }
 
 window.onload = function () {
